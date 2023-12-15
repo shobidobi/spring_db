@@ -2,6 +2,7 @@ package entity;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -18,6 +19,28 @@ public class PasswordsEntity {
     @Basic
     @Column(name = "user_id")
     private int userId;
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    @Basic
+    @Column(name = "date")
+    private LocalDate date;
+
+    public PasswordsEntity(String password, int id, LocalDate date) {
+        this.password = password;
+        this.userId = id;
+        this.date = date;
+    }
+
+    public PasswordsEntity() {
+
+    }
 
     public int getId() {
         return id;

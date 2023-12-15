@@ -1,5 +1,7 @@
 package entity;
 
+
+
 // Simple UserDetails class for storing username and password
 public class UserDetails {
     private String username;

@@ -22,6 +22,29 @@ public class TryLoginEntity {
     @Column(name = "date")
     private Timestamp date;
 
+    public TryLoginEntity() {
+
+    }
+
+    public boolean isValid() {
+        return valid;
+    }
+
+    public void setValid(boolean valid) {
+        this.valid = valid;
+    }
+
+    @Basic
+    @Column(name = "valid")
+    private boolean valid;
+
+    public TryLoginEntity(String userName, String password, boolean valid) {
+        this.userName = userName;
+        this.password = password;
+        this.date = new Timestamp(System.currentTimeMillis());
+        this.valid = valid;
+    }
+
     public int getId() {
         return id;
     }
