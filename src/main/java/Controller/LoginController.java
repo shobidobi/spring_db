@@ -46,10 +46,10 @@ public class LoginController {
         System.out.println("Received login request for username: " + username);
 
         if (checkCredentials(username, password)) {
-            tryLoginRepository.save(new TryLoginEntity(username,password,true));
+            //tryLoginRepository.save(new TryLoginEntity(username,password,true));
             return "Login successful";
         } else {
-            tryLoginRepository.save(new TryLoginEntity(username,password,false));
+            //tryLoginRepository.save(new TryLoginEntity(username,password,false));
             return "Invalid credentials";
         }
     }
@@ -110,5 +110,6 @@ public class LoginController {
             return false;
         }
     }
+
 
 }

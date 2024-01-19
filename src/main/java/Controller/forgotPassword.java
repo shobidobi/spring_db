@@ -21,6 +21,10 @@ public class forgotPassword {
     @PostMapping("/resetPassword")
     public void resetPassword(@RequestParam String password,@RequestParam String emailr){
         int id=userRepository.findUsersEntityByEmail(emailr).get().getId();
+        if(id==0){
+            System.out.println("email not found");
+            return;
+        }
         passwordRepository.save(new entity.PasswordsEntity(password,id,java.time.LocalDate.now()));
         System.out.println("password changed");
     }
